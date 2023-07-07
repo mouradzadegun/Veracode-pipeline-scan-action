@@ -20,7 +20,8 @@ export function downloadJar ()  {
     }
     
     try {
-        var unzipJar = 'unzip -j pipeline-scan-LATEST.zip pipeline-scan.jar'
+        var unzipJar = `unzip -j pipeline-scan-LATEST.zip pipeline-scan.jar
+        rm README.md`
         const getUnzipOutput = execSync(unzipJar).toString();
         core.info('pipeline_scan.jar unzipped')
     }
